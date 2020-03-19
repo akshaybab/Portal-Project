@@ -5,12 +5,12 @@ using UnityEngine;
 public class Transport : MonoBehaviour
 {
     // Start is called before the first frame update
+    public CharacterController Controller; 
     public Transform Player;
-    public Transform PortalTwo;
-
-    public Collider Wall; 
+    public Transform otherPortal;
     public bool InPortal;  
 
+    public Vector3 correction; 
     // Update is called once per frame
     void Update()
     {
@@ -20,25 +20,27 @@ public class Transport : MonoBehaviour
             float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
             Debug.Log(dotProduct);
             if (dotProduct < 0f) {
-                Player.position = PortalTwo.position + new Vector3 (2,2,0); 
+                Controller.enabled = false; 
+                Player.position = otherPortal.position + correction;
+                Controller.enabled = true; 
+                InPortal = false; 
+                Debug.Log("Moved player");
+                Debug.Log(Player.position);
+
             }
         }
     }   
 
     void OnTriggerEnter(Collider other) {
-        if (other.tag == "Environment") {
-            Wall = other;
-        }
+
         if (other.tag == "Player") {
-            Wall.enabled = false;
-            Debug.Log("Enter");       
+            Debug.Log("Enter");
             InPortal = true; 
         }
     }
 
     void OnTriggerExit(Collider other) {
         if (other.tag == "Player") {
-            Wall.enabled = true; 
             Debug.Log("Exit");
             InPortal = false; 
         }
