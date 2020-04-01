@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -962,6 +962,7 @@ GameObject:
   - component: {fileID: 1897702896}
   - component: {fileID: 1897702898}
   - component: {fileID: 1897702899}
+  - component: {fileID: 1897702900}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Player
@@ -1034,14 +1035,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1897702895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 710c524fa81f9f640b974aa8ee4382de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectileObject: {fileID: -1949672672002433217, guid: 909f988460eff844297c8eda2356276d,
     type: 3}
   barrelEnd: {fileID: 1352436022}
-=======
+--- !u!114 &1897702900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897702895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bf2295912b79d64fa7aa40df5f89da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1051,7 +1059,6 @@ MonoBehaviour:
   p2: {fileID: 0}
   count: 0
   count2: 0
->>>>>>> d128ae6621a7af1564d21cea79554b1bf49f60a8
 --- !u!1 &1918111026
 GameObject:
   m_ObjectHideFlags: 0
