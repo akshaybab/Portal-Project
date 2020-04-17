@@ -10,6 +10,8 @@ public class Transport : MonoBehaviour
     public Transform otherPortal;
     public bool InPortal;  
 
+    public Transform rotatePlayer; 
+
     public Vector3 correction; 
     // Update is called once per frame
     void Update()
