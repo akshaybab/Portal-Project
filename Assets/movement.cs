@@ -6,6 +6,7 @@ public class movement : MonoBehaviour
 {
     Rigidbody rb; 
     public float speed = 5.0f; 
+    public float sprintSpeed = 7.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,17 +18,25 @@ public class movement : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.D)) {
-            rb.velocity = transform.right * speed; 
+                rb.velocity = transform.right * speed; 
         }
         else if (Input.GetKey(KeyCode.A)) {
-            rb.velocity = -transform.right * speed; 
+                rb.velocity = -transform.right * speed; 
         }
         else if (Input.GetKey(KeyCode.W)) {
-            rb.velocity = new Vector3(0,0,1) * speed; 
+            if (Input.GetKey(KeyCode.LeftShift)){
+                rb.velocity = transform.right * sprintSpeed;
+            }
+            else{
+                rb.velocity = new Vector3(0,0,1) * speed; 
+            }
         }
         else if (Input.GetKey(KeyCode.S)) {
             rb.velocity = new Vector3(0,0,-1) * speed; 
         } 
+        else if (Input.GetKey(KeyCode.Z)){
+            rb.velocity = new Vector3(0,0,1) * speed; 
+        }
         else if (Input.GetKey(KeyCode.Space)) {
             
         }
