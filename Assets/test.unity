@@ -1048,7 +1048,7 @@ MonoBehaviour:
   Player: {fileID: 1897702897}
   otherPortal: {fileID: 1608039084}
   InPortal: 0
-  correction: {x: 3, y: 0, z: 0}
+  correction: {x: -3, y: 0, z: 0}
 --- !u!65 &1918111028
 BoxCollider:
   m_ObjectHideFlags: 0
