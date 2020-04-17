@@ -26,6 +26,7 @@ public class playermovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(isGrounded);
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if(isGrounded && downVel.y < 0 ) {
             downVel.y = -2f; 
@@ -42,8 +43,9 @@ public class playermovement : MonoBehaviour
             controller.Move(move * speed * Time.deltaTime);
         }
 
-        if(Input.GetButtonDown("Jump") && isGrounded) {
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded) {
             downVel.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
+            Debug.Log("Jump");
         }
 
         downVel.y += gravity * Time.deltaTime; 
