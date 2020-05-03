@@ -884,6 +884,7 @@ MonoBehaviour:
   otherPortal: {fileID: 1918111031}
   InPortal: 0
   rotatePlayer: {fileID: 963194228}
+  ExitSpeed: {x: 0, y: 0, z: 0}
   correction: {x: -3, y: 0, z: 0}
 --- !u!65 &1608039086
 BoxCollider:
@@ -1060,6 +1061,8 @@ MonoBehaviour:
   p2: {fileID: 0}
   count: 0
   count2: 0
+  ExitVector: {x: 0, y: 0, z: 0}
+  barrelEnd: {fileID: 1352436022}
 --- !u!1 &1918111026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1100,7 @@ MonoBehaviour:
   otherPortal: {fileID: 1608039084}
   InPortal: 0
   rotatePlayer: {fileID: 963194228}
+  ExitSpeed: {x: 0, y: 0, z: 0}
   correction: {x: -3, y: 0, z: 0}
 --- !u!65 &1918111028
 BoxCollider:

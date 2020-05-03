@@ -11,6 +11,11 @@ public class instantPortal : MonoBehaviour
     public GameObject p2;
     public float count = 0;
     public float count2 = 0;
+    
+    public Vector3 ExitVector;
+
+    public Transform barrelEnd; 
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -41,6 +46,8 @@ public class instantPortal : MonoBehaviour
             {
                 count2++;
                 //p2 = Instantiate(portal2, hit.point, Quaternion.identity);
+                Vector3 incomingVec = hit.point - barrelEnd.position;
+                ExitVector = Vector3.Reflect(incomingVec, hit.normal);
                 portal2.GetComponent<Transform>().position = hit.point;
             }
         }
