@@ -1,5 +1,0 @@
-sceneSetups:
-- path: C:/Users/julia/OneDrive/Documents/12th Grade Homework/CS5/Portal Project/Assets/Scenes/SampleScene.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
