@@ -8,11 +8,14 @@ public class Transport : MonoBehaviour
     public CharacterController Controller; 
     public Transform Player;
     public Transform otherPortal;
+    public GameObject otherPortObj;
+    //want to transport to otherPortal's normal vector+ position vector
+    //need to then find the normal of the raycasthit in instantportal
     public bool InPortal;  
 
     public Vector3 ExitSpeed;
-
     public Vector3 correction; 
+    public Vector3 moveTo;    
     // Update is called once per frame
     void Update()
     {
@@ -24,7 +27,8 @@ public class Transport : MonoBehaviour
             Debug.Log(dotProduct);
             if (dotProduct < 0f) {
                 Controller.enabled = false; 
-                Player.position = otherPortal.position + correction;
+                //Player.position = otherPortal.position + correction;
+                rePosition();
                 Controller.enabled = true; 
                 InPortal = false; 
                 Debug.Log("Moved player");
@@ -50,4 +54,22 @@ public class Transport : MonoBehaviour
             Controller.Move(exitVector* ExitSpeed.magnitude);
         }
     }
+
+    void rePosition() {
+        Vector3 norm;
+        if (otherPortObj.name == "Portal") {
+            norm = Controller.GetComponent<instantPortal>().normal2;
+        }
+        else {
+            norm = Controller.GetComponent<instantPortal>().normal1;
+        }
+        float newx = otherPortal.position.x + norm.x;
+        float newy = otherPortal.position.y + norm.y;
+        float newz = otherPortal.position.z + norm.z;
+        Vector3 newP = new Vector3(newx, newy, newz);
+        Player.position = newP;
+        Player.LookAt(otherPortal);
+        Player.Rotate(0F, 180F, 0F, Space.Self);
+    }
+
 }

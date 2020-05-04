@@ -4,52 +4,69 @@ using UnityEngine;
 
 public class instantPortal : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    //set portals 1 and 2 before update is called (at the moment they are preset and already present)
     public GameObject portal1;
     public GameObject portal2;
-    public GameObject p1;
-    public GameObject p2;
-    public float count = 0;
-    public float count2 = 0;
-    
+
+    public Vector3 normal1 = new Vector3(-1.0f, 0.0f, 0.0f);
+    public Vector3 normal2 = new Vector3(-1.0f, 0.0f, 0.0f);
+
     public Vector3 ExitVector;
 
     public Transform barrelEnd; 
-
-    void Update()
+    
+    //how to change angle of rotation
+        //find rotation angle of whatever object hit by mouseclick
+        //change rotation of this one to that -- use a normal
+    void Update() 
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            RaycastHit hit;
-            if (count > 0)
-            {
-                Destroy(p1);
-            }
+        RaycastHit hit;
+        //if the keypad/mouse is left clicked
+        if (Input.GetMouseButtonDown(0)) 
+        {            
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit)) 
             {
-                count++;
-                //p1 = Instantiate(portal1, hit.point, Quaternion.identity);
-                //transform.position = hit.point;
-                portal1.GetComponent<Transform>().position = hit.point;
+                Transform portalTransform = portal1.GetComponent<Transform>();
+                
+                portalTransform.position = hit.point;
+                
+                anglePortal(portalTransform, hit);
+
+                normal1 = hit.normal;
             }
         }
-        else if (Input.GetMouseButtonDown(1))
-        {
-            RaycastHit hit;
-            if (count2 > 0)
-            {
-                Destroy(p2);
-            }
+        //if the keypad/mouse is right clicked 
+        else if (Input.GetMouseButtonDown(1)) 
+        {            
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit)) 
             {
-                count2++;
-                //p2 = Instantiate(portal2, hit.point, Quaternion.identity);
+                Transform portalTransform = portal2.GetComponent<Transform>();
+
+                portalTransform.position = hit.point;
+                anglePortal(portalTransform, hit);
                 Vector3 incomingVec = hit.point - barrelEnd.position;
                 ExitVector = Vector3.Reflect(incomingVec, hit.normal);
                 portal2.GetComponent<Transform>().position = hit.point;
+                normal2 = hit.normal;
             }
         }
     }
+
+    void anglePortal(Transform portalT, RaycastHit hit) 
+    {
+        Debug.Log(hit.normal);
+ 
+        float xn = hit.point.x + hit.normal.x;
+        float yn = hit.point.y + hit.normal.y;
+        float zn = hit.point.z + hit.normal.z;
+
+        Vector3 look = new Vector3(xn, yn, zn);
+        portalT.LookAt(look);
+        portalT.Rotate(0.0f, 90.0f, 0.0f, Space.Self);
+
+    }
+
 }
