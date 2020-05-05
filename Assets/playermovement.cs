@@ -26,7 +26,6 @@ public class playermovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isGrounded);
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if(isGrounded && downVel.y < 0 ) {
             downVel.y = -2f; 
