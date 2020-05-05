@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Materials/Vol_36_5_Ambient_Occlusion.mat.meta
-guid: edce60e50798a4f0d875fbec9a863b84
-=======
-guid: fc26f1fda3ca34c43b4d160738d77379
->>>>>>> master:Assets/Materials/PortalOneTexture.mat.meta
+guid: df619f841f63e499083032c008efda46
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

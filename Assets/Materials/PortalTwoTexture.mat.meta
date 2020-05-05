@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Materials/stone_tile.mat.meta
-guid: aaa6643346aae441caec06e6ece7c93c
-=======
-guid: db009a72e8569bb46b719c936a16f596
->>>>>>> master:Assets/Materials/PortalTwoTexture.mat.meta
+guid: debda5bd746784a76994528e8d1b8560
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

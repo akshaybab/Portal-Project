@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Materials/stone_tile2.mat.meta
-guid: 8041d7f6b1f784589bf6f2f1d284a162
-=======
-guid: b206177f2ee6ad24d86dbfc782c4c2ff
->>>>>>> master:Assets/PortalOneTexture.renderTexture.meta
+guid: 8b9fd58b21cb740a0a49c66214aa8c31
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
