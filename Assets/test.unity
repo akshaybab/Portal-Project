@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -443,7 +443,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 2.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1863988559}
+  - {fileID: 1215058918}
   - {fileID: 1352436022}
   m_Father: {fileID: 1897702897}
   m_RootOrder: 0
@@ -783,6 +783,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38075ff1c3cff91428ade499a59bdc97, type: 3}
+--- !u!4 &1215058918 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1215058917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1225419741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,12 +1118,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &1863988559 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 417070, guid: 38075ff1c3cff91428ade499a59bdc97,
-    type: 3}
-  m_PrefabInstance: {fileID: 1215058917}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1897702895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,12 +1203,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1897702895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 710c524fa81f9f640b974aa8ee4382de, type: 3}
+  m_Script: {fileID: 11500000, guid: 78e78a6a7162f48b291eab737c72dd9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileObject: {fileID: -1949672672002433217, guid: 909f988460eff844297c8eda2356276d,
-    type: 3}
-  barrelEnd: {fileID: 1352436022}
+  portal1: {fileID: 0}
+  portal2: {fileID: 0}
+  p1: {fileID: 0}
+  p2: {fileID: 0}
+  count: 0
+  count2: 0
+  ExitVector: {x: 0, y: 0, z: 0}
+  barrelEnd: {fileID: 0}
 --- !u!114 &1897702900
 MonoBehaviour:
   m_ObjectHideFlags: 0
