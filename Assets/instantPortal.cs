@@ -32,6 +32,8 @@ public class instantPortal : MonoBehaviour
                 //p1 = Instantiate(portal1, hit.point, Quaternion.identity);
                 //transform.position = hit.point;
                 portal1.GetComponent<Transform>().position = hit.point;
+                portal1.GetComponent<Transform>().rotation = Quaternion.FromToRotation(Vector3.right , hit.normal);
+                Debug.Log(Vector3.forward + " and " + hit.normal);
             }
         }
         else if (Input.GetMouseButtonDown(1))
@@ -49,6 +51,7 @@ public class instantPortal : MonoBehaviour
                 Vector3 incomingVec = hit.point - barrelEnd.position;
                 ExitVector = Vector3.Reflect(incomingVec, hit.normal);
                 portal2.GetComponent<Transform>().position = hit.point;
+                portal2.GetComponent<Transform>().rotation = Quaternion.FromToRotation(Vector3.right , hit.normal);
             }
         }
     }

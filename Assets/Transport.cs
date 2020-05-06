@@ -22,7 +22,6 @@ public class Transport : MonoBehaviour
             Vector3 portalToPlayer = Player.position - transform.position; 
 
             float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
-            Debug.Log(dotProduct);
             if (dotProduct < 0f) {
                 Controller.enabled = false; 
                 Player.position = otherPortal.position + correction;
