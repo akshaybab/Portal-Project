@@ -16,6 +16,9 @@ public class instantPortal : MonoBehaviour
 
     public Transform barrelEnd; 
 
+    public Vector3 wallNormalOne;
+
+    public Vector3 wallNormalTwo;  
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -34,6 +37,8 @@ public class instantPortal : MonoBehaviour
                 portal1.GetComponent<Transform>().position = hit.point;
                 portal1.GetComponent<Transform>().rotation = Quaternion.FromToRotation(Vector3.right , hit.normal);
                 Debug.Log(Vector3.forward + " and " + hit.normal);
+                wallNormalOne = hit.normal; 
+
             }
         }
         else if (Input.GetMouseButtonDown(1))
@@ -52,6 +57,7 @@ public class instantPortal : MonoBehaviour
                 ExitVector = Vector3.Reflect(incomingVec, hit.normal);
                 portal2.GetComponent<Transform>().position = hit.point;
                 portal2.GetComponent<Transform>().rotation = Quaternion.FromToRotation(Vector3.right , hit.normal);
+                wallNormalTwo = hit.normal; 
             }
         }
     }
