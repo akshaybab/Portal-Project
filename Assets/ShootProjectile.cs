@@ -9,11 +9,11 @@ public class ShootProjectile : MonoBehaviour
     
     void Update ()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2"))
         {
             Rigidbody rocketInstance;
             rocketInstance = Instantiate(projectileObject, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
-            rocketInstance.AddForce(barrelEnd.forward * 1000);
+            rocketInstance.AddForce(barrelEnd.forward * 1500);
         }
     }
 }
