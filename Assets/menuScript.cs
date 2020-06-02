@@ -28,7 +28,7 @@ public class menuScript : MonoBehaviour
     {
         firstPersonCamera.enabled = true;
         overheadCamera.enabled = false;
-
+        Cursor.visible=false;
 
         player.SetActive(true);
         crosshair.SetActive(true);
