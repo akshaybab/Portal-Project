@@ -7,8 +7,8 @@ public class instantPortal : MonoBehaviour
     // Start is called before the first frame update
     public GameObject portal1;
     public GameObject portal2;
-    public Vector3 normal1 = new Vector3(-1.0f, 0.0f, 0.0f);
-    public Vector3 normal2 = new Vector3(-1.0f, 0.0f, 0.0f);
+    public Vector3 normal1;
+    public Vector3 normal2;
     
     public Vector3 ExitVector;
 
